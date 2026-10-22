@@ -1,0 +1,59 @@
+{
+	"name": "mrowki",
+	"version": "0.0.0",
+	"description": "Minimal `meow`-like CLI helper using `util.parseArgs`.",
+	"license": "MIT",
+	"repository": "tommy-mitchell/mrowki",
+	"author": "Tommy Mitchell (https://tommymitchell.io)",
+	"type": "module",
+	"exports": {
+		"types": "./dist/index.d.ts",
+		"default": "./dist/index.js"
+	},
+	"imports": {
+		"#src/*.ts": "./src/*.ts"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": "^22.22 || ^24.15 || >=26"
+	},
+	"scripts": {
+		"build": "tsdown && tsc -p tsconfig.build.json",
+		"postbuild": "node -e 'fs.rmSync(`dist/types.js`)'",
+		"lint": "run-all 'dprint check' xo",
+		"format": "dprint fmt && xo --fix",
+		"test": "c8 ava && tsd test-d"
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"nodejs"
+	],
+	"dependencies": {
+		"is-unicode-supported": "^2.1.0"
+	},
+	"devDependencies": {
+		"@tommy-mitchell/configs": "^0.4.0",
+		"@tommy-mitchell/test-helpers": "^0.1.1",
+		"@types/node": "^22",
+		"ava": "^8.1.0",
+		"c8": "^12.0.0",
+		"dprint": "^0.64.1",
+		"run-all-cli": "^0.1.0",
+		"test-quadruple": "^1.0.0",
+		"tsd": "^0.33.0",
+		"tsdown": "^0.23.1",
+		"type-fest": "^5.10.0",
+		"typescript": "~6.0.3",
+		"xo": "^5.0.1"
+	},
+	"ava": {
+		"extensions": [
+			"ts"
+		],
+		"environmentVariables": {
+			"FORCE_COLOR": "1"
+		}
+	}
+}

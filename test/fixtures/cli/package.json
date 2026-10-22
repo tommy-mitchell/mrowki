@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"type": "module",
+
+	"name": "lintr-cli",
+	"version": "1.2.3",
+	"bin": {
+		"lintr": "./cli.ts"
+	}
+}
