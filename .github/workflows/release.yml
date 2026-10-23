@@ -5,7 +5,7 @@ on:
 
 jobs:
   publish:
-    name: Build and publish
+    name: Build and stage publish (OIDC)
     runs-on: ubuntu-latest
     permissions:
       contents: read
