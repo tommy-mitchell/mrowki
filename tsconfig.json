@@ -1,16 +1,7 @@
 {
-	"extends": "@tommy-mitchell/configs/ts",
+	"extends": "@tommy-mitchell/configs/ts/node",
 	"include": ["src", "test", "test-d"],
 	"compilerOptions": {
 		"noEmit": true,
-		"types": ["node"],
-		"target": "es2024",
-		"lib": ["es2024"],
-		"module": "nodenext",
-		"moduleResolution": "nodenext",
-		"rewriteRelativeImportExtensions": true,
-		"erasableSyntaxOnly": true,
-		"verbatimModuleSyntax": true,
-		"resolveJsonModule": true,
 	},
 }

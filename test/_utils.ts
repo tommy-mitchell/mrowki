@@ -1,27 +1,11 @@
 /* eslint-disable ava/no-ignored-test-files -- helper */
 import { fileURLToPath } from "node:url";
 import test from "ava";
-import { parseCommandString } from "@tommy-mitchell/test-helpers";
+import { parseCommandString, serializeAnsi } from "@tommy-mitchell/test-helpers";
 import * as tq from "test-quadruple";
 import type { AnyFlags, PackageJsonLike } from "#src/types.ts";
 
 export const atFixture = (name: string) => fileURLToPath(new URL(`fixtures/${name}`, import.meta.url));
-
-const codes = {
-	"[31m": "red",
-	"[32m": "green",
-	"[33m": "yellow",
-	"[34m": "blue",
-	"[39m": "/fg",
-};
-
-// TODO: replace with vitest-ansi-serializer once updated
-const serializeAnsi = (input: string): string => (
-	input.replaceAll(
-		/\u{1B}([78c]|\[(?:\?25[hl]|\d+;\d+H|\d*[A-Z]+|\d+m))/gv, // eslint-disable-line no-control-regex, regexp/no-control-character, regexp/prefer-named-capture-group
-		(raw, code: string) => Object.hasOwn(codes, code) ? `<${codes[code as keyof typeof codes]}>` : raw,
-	)
-);
 
 export const getLogs = (logger: tq.AnyFunction): string => (
 	serializeAnsi(tq.explain(logger).calls.map(call => call.arguments.join(" ")).join("\n"))
