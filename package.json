@@ -28,7 +28,37 @@
 		"dist"
 	],
 	"keywords": [
-		"nodejs"
+		"nodejs",
+		"args",
+		"argument",
+		"arguments",
+		"argv",
+		"bin",
+		"cli",
+		"cmd",
+		"command",
+		"command-line",
+		"console",
+		"flags",
+		"figure",
+		"figures",
+		"helper",
+		"input",
+		"line",
+		"log",
+		"logging",
+		"option",
+		"options",
+		"parse",
+		"parseargs",
+		"parser",
+		"process",
+		"symbol",
+		"symbols",
+		"stdout",
+		"terminal",
+		"util",
+		"utility"
 	],
 	"dependencies": {
 		"is-unicode-supported": "^2.1.0"
